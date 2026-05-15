@@ -1,0 +1,3137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДВССК | Дальневосточный судостроительный колледж | Главная</title>
+    <style>
+        /* Базовые стили и сброс */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --dark-blue: #0A1D3E;
+            --medium-blue: #1E3A5F;
+            --accent-blue: #2B6CB0;
+            --gray: #4A5568;
+            --light-gray: #E2E8F0;
+            --white: #FFFFFF;
+        }
+
+        body {
+            background-color: var(--white);
+            color: var(--gray);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('https://avatars.mds.yandex.net/i?id=a36de6c981374ad896423de6ebe3c417_sr-5353565-images-thumbs&n=13');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        /* Затемнение фона для лучшей читаемости */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.85);
+            z-index: -1;
+        }
+
+        /* Шапка сайта */
+        header {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+            color: var(--white);
+            padding: 1rem 2rem;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+            color: inherit;
+            cursor: pointer;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+
+        .logo-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .logo:hover .logo-icon {
+            transform: rotate(15deg);
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-blue);
+            transition: width 0.3s ease;
+        }
+
+        nav a:hover::after, nav a.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Основной контент */
+        main {
+            flex: 1;
+            padding: 2rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent-blue);
+            margin: 0.5rem auto;
+            border-radius: 2px;
+        }
+
+        /* Стили для главной страницы */
+        .hero {
+            background: linear-gradient(rgba(10, 29, 62, 0.4), rgba(10, 29, 62, 0.6)), url('https://sskzvezda.ru/images/foto_news/%D1%81%D0%BF%D0%B5%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D1%82%D0%B5%D1%82_%D0%94%D0%92%D0%A1%D0%A1%D0%9A/2K5A5124.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white);
+            padding: 5rem 2rem;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 3rem;
+            position: relative;
+            overflow: hidden;
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 29, 62, 0.3);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: var(--white);
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2C5282;
+            transform: translateY(-3px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .feature-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        /* Стили для страницы специальностей */
+        .specialties {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .specialty-card {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .specialty-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .specialty-img {
+            height: 180px;
+            background-color: var(--medium-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+
+        .specialty-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+        }
+
+        .specialty-img span {
+            position: relative;
+            z-index: 1;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+            text-align: center;
+            padding: 0 10px;
+        }
+
+        .specialty-content {
+            padding: 1.5rem;
+        }
+
+        .specialty-content h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        .specialty-score {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        /* Стили для страницы абитуриенту */
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--light-gray);
+        }
+
+        .tab {
+            padding: 1rem 1.5rem;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .tab:hover {
+            color: var(--accent-blue);
+        }
+
+        .tab.active {
+            color: var(--accent-blue);
+        }
+
+        .tab.active::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--accent-blue);
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .specialties-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .specialties-table th {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 1rem;
+            text-align: left;
+        }
+
+        .specialties-table td {
+            padding: 1rem;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .specialties-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .specialties-table tr:hover {
+            background-color: rgba(10, 29, 62, 0.05);
+        }
+
+        .specialty-link {
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .specialty-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Стили для форм обучения */
+        .study-form-info {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .study-form-info h3 {
+            color: var(--dark-blue);
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .study-form-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .study-form-feature {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .study-form-feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .study-form-feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .study-form-feature h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-blue);
+        }
+
+        /* Стили для приёмной комиссии */
+        .admission-commission {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .commission-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .commission-card {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .commission-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .commission-card h4 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+            border-bottom: 2px solid var(--accent-blue);
+            padding-bottom: 0.5rem;
+        }
+
+        .commission-detail {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .commission-icon {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            color: var(--accent-blue);
+            min-width: 20px;
+        }
+
+        .commission-staff {
+            margin-top: 2rem;
+        }
+
+        .staff-member {
+            background: var(--light-gray);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .staff-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: var(--medium-blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 1.5rem;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .staff-info h5 {
+            font-size: 1.1rem;
+            color: var(--dark-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .staff-info p {
+            margin-bottom: 0.3rem;
+            font-size: 0.9rem;
+        }
+
+        .commission-notice {
+            background: #e6f7ff;
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .commission-notice h4 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Стили для документов */
+        .documents-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .documents-list {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .document-item {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-blue);
+            transition: transform 0.3s ease;
+        }
+
+        .document-item:hover {
+            transform: translateX(5px);
+        }
+
+        .document-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .document-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent-blue);
+            min-width: 30px;
+        }
+
+        .document-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .document-description {
+            color: var(--gray);
+            line-height: 1.5;
+        }
+
+        .document-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-blue);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .document-link:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+        }
+
+        .documents-notice {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .documents-notice h4 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Стили для методичек */
+        .methodics-section {
+            background-color: var(--white);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            margin-bottom: 2rem;
+        }
+
+        .methodics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .methodic-card {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            border-radius: 8px;
+            padding: 1.5rem;
+            border-left: 4px solid var(--accent-blue);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .methodic-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .methodic-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .methodic-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            color: var(--accent-blue);
+            min-width: 30px;
+        }
+
+        .methodic-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark-blue);
+        }
+
+        .methodic-code {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-top: 0.3rem;
+        }
+
+        .methodic-description {
+            color: var(--gray);
+            line-height: 1.5;
+            flex-grow: 1;
+            margin-bottom: 1rem;
+        }
+
+        .methodic-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .methodic-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--accent-blue);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border: 1px solid var(--accent-blue);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .methodic-link:hover {
+            background-color: var(--accent-blue);
+            color: var(--white);
+        }
+
+        .methodic-notice {
+            background: #e6f7ff;
+            border-left: 4px solid var(--accent-blue);
+            padding: 1.5rem;
+            border-radius: 4px;
+            margin-top: 2rem;
+        }
+
+        .methodic-notice h4 {
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+        }
+
+        /* Модальные окна */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            overflow-y: auto;
+        }
+
+        .modal-content {
+            background-color: var(--white);
+            margin: 2rem auto;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 900px;
+            width: 90%;
+            position: relative;
+            animation: modalFadeIn 0.3s ease;
+        }
+
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--gray);
+            background: none;
+            border: none;
+            z-index: 2001;
+        }
+
+        .close-modal:hover {
+            color: var(--dark-blue);
+        }
+
+        .modal-header {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .modal-img {
+            width: 300px;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .modal-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .modal-info {
+            flex: 1;
+        }
+
+        .modal-info h2 {
+            text-align: left;
+            margin-bottom: 0.5rem;
+            font-size: 1.8rem;
+        }
+
+        .modal-info h2::after {
+            display: none;
+        }
+
+        .modal-code {
+            font-size: 1.1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .modal-details {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+        }
+
+        .modal-section h3 {
+            font-size: 1.2rem;
+            color: var(--dark-blue);
+            margin-bottom: 1rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 0.5rem;
+        }
+
+        .modal-section p {
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+
+        .modal-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .modal-feature {
+            background: var(--light-gray);
+            padding: 1rem;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .modal-feature-icon {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-score {
+            display: inline-block;
+            background-color: var(--accent-blue);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+
+        /* Стили для страницы новостей */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .news-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-img {
+            height: 200px;
+            background-color: var(--gray);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .news-content {
+            padding: 1.5rem;
+        }
+
+        .news-date {
+            font-size: 0.9rem;
+            color: var(--accent-blue);
+            margin-bottom: 0.5rem;
+        }
+
+        .news-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: var(--dark-blue);
+        }
+
+        /* Стили для страницы контактов */
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+
+        .contact-info {
+            background: linear-gradient(135deg, var(--light-gray) 0%, var(--white) 100%);
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .contact-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-blue);
+        }
+
+        .contact-details {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.2rem;
+            margin-right: 1rem;
+            color: var(--accent-blue);
+        }
+
+        .map-container {
+            height: 400px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 0.5rem;
+        }
+
+        .social-link:hover {
+            transform: translateY(-3px);
+            background-color: rgba(10, 29, 62, 0.05);
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .social-link:hover .social-icon {
+            transform: scale(1.1);
+        }
+
+        /* Стили для страницы преподавателей */
+        .teachers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .teacher-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .teacher-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .teacher-img {
+            height: 300px;
+            background-color: var(--light-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .teacher-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .teacher-card:hover .teacher-img img {
+            transform: scale(1.05);
+        }
+
+        .teacher-content {
+            padding: 1.5rem;
+        }
+
+        .teacher-name {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-blue);
+        }
+
+        .teacher-position {
+            font-size: 1rem;
+            color: var(--accent-blue);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .teacher-details {
+            margin-top: 1rem;
+        }
+
+        .teacher-detail {
+            margin-bottom: 0.8rem;
+        }
+
+        .teacher-detail h4 {
+            font-size: 0.9rem;
+            color: var(--gray);
+            margin-bottom: 0.3rem;
+        }
+
+        .teacher-detail p {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        /* Футер */
+        footer {
+            background: linear-gradient(135deg, var(--dark-blue) 0%, var(--medium-blue) 100%);
+            color: var(--white);
+            padding: 2rem 2rem 1rem;
+            margin-top: auto;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent-blue);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-blue);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .footer-social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            padding: 0.5rem;
+        }
+
+        .footer-social-link:hover {
+            transform: translateY(-3px);
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-social-icon {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+
+        .footer-social-link:hover .footer-social-icon {
+            transform: scale(1.1);
+        }
+
+        /* Стили для модального окна новостей */
+        .news-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .news-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--light-gray);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+        }
+
+        .news-stat-icon {
+            font-size: 1.1rem;
+        }
+
+        .modal-date {
+            font-size: 1rem;
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+                margin-right: 0;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .modal-header {
+                flex-direction: column;
+            }
+            
+            .modal-img {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            .tabs {
+                flex-direction: column;
+            }
+            
+            .tab {
+                text-align: center;
+                border-bottom: 1px solid var(--light-gray);
+            }
+            
+            .specialties-table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-container {
+                height: 300px;
+            }
+            
+            .staff-member {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .commission-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .methodics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding: 3rem 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .modal-content {
+                padding: 1rem;
+                margin: 1rem auto;
+            }
+        }
+
+        /* Анимации */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .floating {
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .hidden {
+            display: none;
+        }
+        /* Стили для бейджа Профессионалитет - */
+.professionalitet-badge {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 120px;
+    height: auto;
+    z-index: 9999; /* Увеличиваем z-index */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.professionalitet-badge:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.professionalitet-badge img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+}
+
+/* Адаптивность для бейджа */
+@media (max-width: 768px) {
+    .professionalitet-badge {
+        width: 90px;
+        bottom: 70px;
+        right: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .professionalitet-badge {
+        width: 80px;
+        bottom: 60px;
+        right: 10px;
+    }
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="header-container">
+            <div class="logo" data-page="home">
+                <div class="logo-icon">
+                    <img src="https://avatars.mds.yandex.net/i?id=a36de6c981374ad896423de6ebe3c417_sr-5353565-images-thumbs&n=13" alt="Логотип ДВССК">
+                </div>
+                <div class="logo-text">
+                    <h1>ДВССК</h1>
+                    <p>Дальневосточный судостроительный колледж</p>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Главная</a></li>
+                    <li><a href="#" class="nav-link" data-page="applicant">Абитуриенту</a></li>
+                    <li><a href="#" class="nav-link" data-page="specialties">Специальности</a></li>
+                    <li><a href="#" class="nav-link" data-page="teachers">Преподаватели</a></li>
+                    <li><a href="#" class="nav-link" data-page="news">Новости</a></li>
+                    <li><a href="#" class="nav-link" data-page="contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main>
+        <!-- Главная страница -->
+        <section id="home" class="page active">
+            <div class="container">
+                <div class="hero">
+                    <div class="hero-content">
+                        <h1>Добро пожаловать в ДВССК!</h1>
+                        <p>Мы готовим специалистов для судостроительной отрасли с 1965 года. Современное оборудование, профессиональные педагоги и гарантированное трудоустройство.</p>
+                        <a href="#" class="btn nav-link" data-page="specialties">Выбрать специальность</a>
+                    </div>
+                </div>
+                
+                <h2>Почему выбирают наш колледж?</h2>
+                <div class="features">
+                    <div class="feature-card floating">
+                        <div class="feature-icon">⚓</div>
+                        <h3>Профессиональные педагоги</h3>
+                        <p>Наши преподаватели - практикующие специалисты с опытом работы на судостроительных предприятиях</p>
+                    </div>
+                    <div class="feature-card floating" style="animation-delay: 1s;">
+                        <div class="feature-icon">🚢</div>
+                        <h3>Современные мастерские</h3>
+                        <p>Обучение проходит на современном оборудовании, включая тренажеры и симуляторы</p>
+                    </div>
+                    <div class="feature-card floating" style="animation-delay: 2s;">
+                        <div class="feature-icon">🎓</div>
+                        <h3>Гарантированное трудоустройство</h3>
+                        <p>Мы сотрудничаем с ведущими предприятиями отрасли, которые ждут наших выпускников</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница специальностей -->
+        <section id="specialties" class="page">
+            <div class="container">
+                <h2>Наши специальности</h2>
+                <div class="specialties">
+                    <!-- Сварочное производство -->
+                    <div class="specialty-card" data-specialty="welding-production">
+                        <div class="specialty-img" style="background-image: url('https://www.profguide.io/images/article/a/54/3iAUVHjHBj.webp');">
+                            <span>Сварочное производство</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Сварочное производство</h3>
+                            <p>Подготовка специалистов по сварочным технологиям, оборудованию и контролю качества сварочных работ в судостроении.</p>
+                            <p><strong>Срок обучения:</strong> 2 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">4.2</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="welding-production" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Судостроитель-судоремонтник -->
+                    <div class="specialty-card" data-specialty="shipbuilder">
+                        <div class="specialty-img" style="background-image: url('https://bkamen.info/assets/images/resources/9660/e7ca5532ede35cad1285b2d1e9bc4fb71c43a3cf.jpg');">
+                            <span>Судостроитель-судоремонтник</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Судостроитель-судоремонтник металлических судов</h3>
+                            <p>Профессиональная подготовка по строительству и ремонту металлических судов, работе с судовыми конструкциями.</p>
+                            <p><strong>Срок обучения:</strong> 2 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">4.0</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="shipbuilder" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Сварщик -->
+                    <div class="specialty-card" data-specialty="welder">
+                        <div class="specialty-img" style="background-image: url('https://cdnn21.img.ria.ru/images/155573/11/1555731191_0:0:3077:2048_900x0_80_0_0_21527d4107c4480f3ea1e7c3d0993008.jpg');">
+                            <span>Сварщик</span>
+                        </div>
+                        <div class="specialty-content">
+                           <h3>Сварщик (ручной и частично механизированной сварки)</h3>
+                           <p>Обучение ручной и механизированной сварке, наплавке различных материалов, применяемых в судостроении.</p>
+                           <p><strong>Срок обучения:</strong> 2 года 5 месяцев</p>
+                           <p><strong>Средний балл:</strong> <span class="specialty-score">3.8</span></p>
+                           <button class="btn specialty-details-btn" data-specialty="welder" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Электрорадиомонтажник -->
+                    <div class="specialty-card" data-specialty="electroradiomontage">
+                        <div class="specialty-img" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTA1kPSq-HbTB7mruDfmaFbknkCFDKHlNAS1g&s');">
+                            <span>Электрорадиомонтажник</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Электрорадиомонтажник судовой</h3>
+                            <p>Монтаж, наладка и обслуживание судового электрорадиооборудования, систем связи и навигации.</p>
+                            <p><strong>Срок обучения:</strong> 2 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">4.3</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="electroradiomontage" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Слесарь-монтажник -->
+                    <div class="specialty-card" data-specialty="locksmith">
+                        <div class="specialty-img" style="background-image: url('https://80.img.avito.st/image/1/1._u7yILawUgfEl9AKgmez-qiBUAdCiVoNRA.qYTekMHbfnGuLkS-aRxESvEUcNSfMOORpt8qK1Nutf0');">
+                            <span>Слесарь-монтажник</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Слесарь-монтажник судовой</h3>
+                            <p>Монтаж, демонтаж и ремонт судовых механизмов, систем и оборудования. Сборка судовых конструкций.</p>
+                            <p><strong>Срок обучения:</strong> 2 года 5 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">3.7</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="locksmith" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Дефектоскопист -->
+                    <div class="specialty-card" data-specialty="defectoscopist">
+                        <div class="specialty-img" style="background-image: url('https://gefest-rost.ru/upload/images/blog/teoj74cenha.jpg');">
+                            <span>Дефектоскопист</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Дефектоскопист</h3>
+                            <p>Контроль качества материалов и сварных соединений методами неразрушающего контроля в судостроении.</p>
+                            <p><strong>Срок обучения:</strong> 2 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">4.1</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="defectoscopist" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Управление качеством -->
+                    <div class="specialty-card" data-specialty="quality-management">
+                        <div class="specialty-img" style="background-image: url('https://i.vuzopedia.ru/storage/app/resources/resize/605_0_0_0_auto/img_6c9d8ee880ae848a633076c3df5ba439.jpeg');">
+                            <span>Управление качеством</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Управление качеством продукции</h3>
+                            <p>Организация и контроль качества продукции, процессов и услуг в судостроительной отрасли.</p>
+                            <p><strong>Срок обучения:</strong> 3 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">4.4</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="quality-management" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Судостроение -->
+                    <div class="specialty-card" data-specialty="shipbuilding">
+                        <div class="specialty-img" style="background-image: url('https://www.rosneft.ru/upload/site1/document_news/pic_24062019_2-350x1000.jpg');">
+                            <span>Судостроение</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Судостроение</h3>
+                            <p>Проектирование, строительство и ремонт судов различного назначения. Современные технологии судостроения.</p>
+                            <p><strong>Срок обучения:</strong> 3 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">4.5</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="shipbuilding" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Информационные системы -->
+                    <div class="specialty-card" data-specialty="information-systems">
+                        <div class="specialty-img" style="background-image: url('https://dagpravda.ru/wp-content/uploads/2023/12/strojka.jpg');">
+                            <span>Информационные системы</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Информационные системы и программирование</h3>
+                            <p>Разработка, внедрение и сопровождение информационных систем для судостроительной отрасли.</p>
+                            <p><strong>Срок обучения:</strong> 3 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">4.6</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="information-systems" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Монтаж и техобслуживание -->
+                    <div class="specialty-card" data-specialty="ship-machinery">
+                        <div class="specialty-img" style="background-image: url('https://ic.pics.livejournal.com/nordlight_spb/31085042/40522/original.jpg');">
+                            <span>Монтаж и техобслуживание</span>
+                        </div>
+                        <div class="specialty-content">
+                            <h3>Монтаж и техобслуживание судовых машин</h3>
+                            <p>Монтаж, наладка, техническое обслуживание и ремонт судовых машин, механизмов и систем.</p>
+                            <p><strong>Срок обучения:</strong> 2 года 10 месяцев</p>
+                            <p><strong>Средний балл:</strong> <span class="specialty-score">3.9</span></p>
+                            <button class="btn specialty-details-btn" data-specialty="ship-machinery" style="margin-top: 1rem;">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница преподавателей -->
+        <section id="teachers" class="page">
+            <div class="container">
+                <h2>Наши преподаватели</h2>
+                <div class="teachers-grid">
+                    <!-- Карточка Григорьева Александра Николаевича -->
+                    <div class="teacher-card" data-teacher="grigorev">
+                        <div class="teacher-img">
+                            <img src="https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/grigorev-alexandr-nikolaevich.png" alt="Григорьев Александр Николаевич">
+                        </div>
+                        <div class="teacher-content">
+                            <h3 class="teacher-name">Григорьев Александр Николаевич</h3>
+                            <p class="teacher-position">Руководитель физического воспитания</p>
+                            <div class="teacher-details">
+                                <div class="teacher-detail">
+                                    <h4>Преподаваемые дисциплины:</h4>
+                                    <p>Физическая культура</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Образование:</h4>
+                                    <p>Высшее, Горное дело, Инженер</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Опыт работы:</h4>
+                                    <p>40/17 лет</p>
+                                </div>
+                            </div>
+                            <button class="btn view-details-btn" style="margin-top: 1rem; width: 100%;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка Харитоновой Анны Николаевны -->
+                    <div class="teacher-card" data-teacher="haritonova">
+                        <div class="teacher-img">
+                            <img src="https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/haritonova-anna-nikolaevna.png" alt="Харитонова Анна Николаевна">
+                        </div>
+                        <div class="teacher-content">
+                            <h3 class="teacher-name">Харитонова Анна Николаевна</h3>
+                            <p class="teacher-position">Преподаватель</p>
+                            <div class="teacher-details">
+                                <div class="teacher-detail">
+                                    <h4>Преподаваемые дисциплины:</h4>
+                                    <p>Русский язык, Родной язык, Родная литература</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Образование:</h4>
+                                    <p>Высшее, Русский язык и литература, Учитель русского языка и литературы</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Опыт работы:</h4>
+                                    <p>21 год</p>
+                                </div>
+                            </div>
+                            <button class="btn view-details-btn" style="margin-top: 1rem; width: 100%;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка Ищенко Марины Леонидовны -->
+                    <div class="teacher-card" data-teacher="ishchenko">
+                        <div class="teacher-img">
+                            <img src="https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/ishchenko-marina-leonidovna.png" alt="Ищенко Марина Леонидовна">
+                        </div>
+                        <div class="teacher-content">
+                            <h3 class="teacher-name">Ищенко Марина Леонидовна</h3>
+                            <p class="teacher-position">Методист</p>
+                            <div class="teacher-details">
+                                <div class="teacher-detail">
+                                    <h4>Преподаваемые дисциплины:</h4>
+                                    <p>Основы проектной деятельности</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Образование:</h4>
+                                    <p>Высшее, Экономика и управление на предприятии (по отраслям), Экономист-менеджер</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Опыт работы:</h4>
+                                    <p>1 год</p>
+                                </div>
+                            </div>
+                            <button class="btn view-details-btn" style="margin-top: 1rem; width: 100%;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка Коробко Ангелины Олеговны -->
+                    <div class="teacher-card" data-teacher="korobko">
+                        <div class="teacher-img">
+                            <img src="https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/korobko-angelina-olegovna.png" alt="Коробко Ангелина Олеговна">
+                        </div>
+                        <div class="teacher-content">
+                            <h3 class="teacher-name">Коробко Ангелина Олеговна</h3>
+                            <p class="teacher-position">Педагог дополнительного образования</p>
+                            <div class="teacher-details">
+                                <div class="teacher-detail">
+                                    <h4>Преподаваемые дисциплины:</h4>
+                                    <p>Основы проектной деятельности</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Образование:</h4>
+                                    <p>Среднее профессиональное, Повар, кондитер</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Опыт работы:</h4>
+                                    <p>3 года</p>
+                                </div>
+                            </div>
+                            <button class="btn view-details-btn" style="margin-top: 1rem; width: 100%;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка Сахневич Ольги Геннадьевны -->
+                    <div class="teacher-card" data-teacher="sahnevich">
+                        <div class="teacher-img">
+                            <img src="https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/sahnevich-olga-gennadevna.png" alt="Сахневич Ольга Геннадьевна">
+                        </div>
+                        <div class="teacher-content">
+                            <h3 class="teacher-name">Сахневич Ольга Геннадьевна</h3>
+                            <p class="teacher-position">Преподаватель</p>
+                            <div class="teacher-details">
+                                <div class="teacher-detail">
+                                    <h4>Преподаваемые дисциплины:</h4>
+                                    <p>Дисциплины профессионального цикла по специальности «Управление качеством продукции»</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Образование:</h4>
+                                    <p>Высшее, Экономика и организация промышленности продовольственных товаров, Инженер-экономист</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Опыт работы:</h4>
+                                    <p>15 лет</p>
+                                </div>
+                            </div>
+                            <button class="btn view-details-btn" style="margin-top: 1rem; width: 100%;">Подробнее</button>
+                        </div>
+                    </div>
+
+                    <!-- Карточка Савлевой Татьяны Львовны -->
+                    <div class="teacher-card" data-teacher="savlova">
+                        <div class="teacher-img">
+                            <img src="https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/savlova-tatyana-lvovna.png" alt="Савлева Татьяна Львовна">
+                        </div>
+                        <div class="teacher-content">
+                            <h3 class="teacher-name">Савлева Татьяна Львовна</h3>
+                            <p class="teacher-position">Преподаватель</p>
+                            <div class="teacher-details">
+                                <div class="teacher-detail">
+                                    <h4>Преподаваемые дисциплины:</h4>
+                                    <p>История</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Образование:</h4>
+                                    <p>Высшее, История, Историк. Преподаватель истории и обществознания</p>
+                                </div>
+                                <div class="teacher-detail">
+                                    <h4>Опыт работы:</h4>
+                                    <p>43 года</p>
+                                </div>
+                            </div>
+                            <button class="btn view-details-btn" style="margin-top: 1rem; width: 100%;">Подробнее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница абитуриенту -->
+        <section id="applicant" class="page">
+            <div class="container">
+                <h2>Абитуриенту</h2>
+                
+                <div class="tabs">
+                    <button class="tab active" data-tab="full-time">Очная форма обучения</button>
+                    <button class="tab" data-tab="part-time">Заочная форма обучения</button>
+                    <button class="tab" data-tab="admission-commission">Приёмная комиссия</button>
+                    <button class="tab" data-tab="documents">Документы для поступления</button>
+                    <button class="tab" data-tab="methodics">Методички для студентов</button>
+                    <button class="tab" data-tab="specialties-table">Таблица специальностей</button>
+                </div>
+                
+                <div id="full-time" class="tab-content active">
+                    <div class="study-form-info">
+                        <h3>Очная форма обучения</h3>
+                        <p>Очная форма обучения в ДВССК — это классический формат получения профессионального образования, предполагающий ежедневное посещение занятий в колледже.</p>
+                        
+                        <div class="study-form-features">
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">📚</div>
+                                <h4>Интенсивное обучение</h4>
+                                <p>Ежедневные занятия с преподавателями и мастерами производственного обучения</p>
+                            </div>
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">👥</div>
+                                <h4>Живое общение</h4>
+                                <p>Непрерывное взаимодействие с преподавателями и сокурсниками</p>
+                            </div>
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">⚙️</div>
+                                <h4>Практические навыки</h4>
+                                <p>Регулярные практические занятия в современных мастерских</p>
+                            </div>
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">🏢</div>
+                                <h4>Полное погружение</h4>
+                                <p>Участие в жизни колледжа, мероприятиях и студенческих проектах</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin-top: 2rem;">Преимущества очной формы:</h4>
+                        <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                            <li>Систематический контроль знаний и навыков</li>
+                            <li>Возможность сразу же задать вопросы преподавателю</li>
+                            <li>Доступ к современному оборудованию и мастерским</li>
+                            <li>Участие в производственных практиках на предприятиях-партнерах</li>
+                            <li>Социальные льготы для студентов (при наличии)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="part-time" class="tab-content">
+                    <div class="study-form-info">
+                        <h3>Заочная форма обучения</h3>
+                        <p>Заочная форма обучения в ДВССК позволяет совмещать получение профессионального образования с работой или другими обязанностями.</p>
+                        
+                        <div class="study-form-features">
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">📅</div>
+                                <h4>Гибкий график</h4>
+                                <p>Самостоятельное планирование времени для изучения материала</p>
+                            </div>
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">💼</div>
+                                <h4>Совмещение с работой</h4>
+                                <p>Возможность работать и одновременно получать образование</p>
+                            </div>
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">🏠</div>
+                                <h4>Удаленное обучение</h4>
+                                <p>Основная часть материала изучается самостоятельно</p>
+                            </div>
+                            <div class="study-form-feature">
+                                <div class="study-form-feature-icon">🎯</div>
+                                <h4>Сессионный формат</h4>
+                                <p>Установочные и экзаменационные сессии 2 раза в год</p>
+                            </div>
+                        </div>
+                        
+                        <h4 style="margin-top: 2rem;">Особенности заочной формы:</h4>
+                        <ul style="padding-left: 1.5rem; margin-top: 1rem;">
+                            <li>Установочные сессии для получения заданий и консультаций</li>
+                            <li>Самостоятельное изучение теоретического материала</li>
+                            <li>Экзаменационные сессии для контроля знаний</li>
+                            <li>Обязательные практические занятия в мастерских колледжа</li>
+                            <li>Дистанционная поддержка преподавателей</li>
+                        </ul>
+                        
+                        <div style="background-color: #e6f7ff; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                            <h4 style="color: var(--dark-blue); margin-bottom: 1rem;">Важная информация:</h4>
+                            <p>Для заочной формы обучения доступны не все специальности. Уточняйте актуальный список в приемной комиссии.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="admission-commission" class="tab-content">
+                    <div class="admission-commission">
+                        <h3>Приёмная комиссия</h3>
+                        <p>Приёмная комиссия Дальневосточного судостроительного колледжа работает для того, чтобы помочь вам поступить и ответить на все ваши вопросы о поступлении.</p>
+                        
+                        <div class="commission-info">
+                            <div class="commission-card">
+                                <h4>📞 Контактная информация</h4>
+                                <div class="commission-detail">
+                                    <div class="commission-icon">📍</div>
+                                    <div>
+                                        <p><strong>Адрес:</strong></p>
+                                        <p>Приморский край, г. Большой Камень, ул. Ленина, дом 22</p>
+                                        <p><em>Кабинет: 105 (1 этаж, главный корпус)</em></p>
+                                    </div>
+                                </div>
+                                <div class="commission-detail">
+                                    <div class="commission-icon">📞</div>
+                                    <div>
+                                        <p><strong>Телефон:</strong></p>
+                                        <p>+7 (42335) 4-00-38</p>
+                                    </div>
+                                </div>
+                                <div class="commission-detail">
+                                    <div class="commission-icon">✉️</div>
+                                    <div>
+                                        <p><strong>Email:</strong></p>
+                                        <p>dvssk-bk.po@yandex.ru</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="commission-card">
+                                <h4>⏰ Режим работы</h4>
+                                <div class="commission-detail">
+                                    <div class="commission-icon">🕘</div>
+                                    <div>
+                                        <p><strong>Понедельник - Пятница:</strong></p>
+                                        <p>9:00 - 18:00</p>
+                                    </div>
+                                </div>
+                                <div class="commission-detail">
+                                    <div class="commission-icon">🕘</div>
+                                    <div>
+                                        <p><strong>Суббота:</strong></p>
+                                        <p>9:00 - 15:00</p>
+                                    </div>
+                                </div>
+                                <div class="commission-detail">
+                                    <div class="commission-icon">🚫</div>
+                                    <div>
+                                        <p><strong>Воскресенье:</strong></p>
+                                        <p>Выходной</p>
+                                    </div>
+                                </div>
+                                <div class="commission-detail">
+                                    <div class="commission-icon">🍽️</div>
+                                    <div>
+                                        <p><strong>Обеденный перерыв:</strong></p>
+                                        <p>13:00 - 14:00</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="commission-staff">
+                            <h4>👥 Сотрудники приёмной комиссии</h4>
+                            
+                            <div class="staff-member">
+                                <div class="staff-avatar">ИИ</div>
+                                <div class="staff-info">
+                                    <h5>Иванова Ирина Сергеевна</h5>
+                                    <p><strong>Должность:</strong> Председатель приёмной комиссии</p>
+                                    <p><strong>Образование:</strong> Высшее педагогическое</p>
+                                    <p><strong>Стаж работы:</strong> 15 лет</p>
+                                </div>
+                            </div>
+                            
+                            <div class="staff-member">
+                                <div class="staff-avatar">ПС</div>
+                                <div class="staff-info">
+                                    <h5>Петрова Светлана Владимировна</h5>
+                                    <p><strong>Должность:</strong> Секретарь приёмной комиссии</p>
+                                    <p><strong>Образование:</strong> Высшее, документоведение</p>
+                                    <p><strong>Стаж работы:</strong> 8 лет</p>
+                                </div>
+                            </div>
+                            
+                            <div class="staff-member">
+                                <div class="staff-avatar">СМ</div>
+                                <div class="staff-info">
+                                    <h5>Сидоров Михаил Анатольевич</h5>
+                                    <p><strong>Должность:</strong> Специалист по профориентации</p>
+                                    <p><strong>Образование:</strong> Высшее психологическое</p>
+                                    <p><strong>Стаж работы:</strong> 12 лет</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="commission-notice">
+                            <h4>📋 Что нужно знать абитуриенту</h4>
+                            <p><strong>Приём документов осуществляется:</strong> с 20 июня по 15 августа</p>
+                            <p><strong>Необходимые документы:</strong> аттестат об образовании, паспорт, 4 фотографии 3×4, медицинская справка (форма 086/у)</p>
+                            <p><strong>Вступительные испытания:</strong> по некоторым специальностям проводятся собеседования или тестирования</p>
+                            <p><strong>Консультации:</strong> ежедневно с 10:00 до 16:00 вы можете получить консультацию по выбору специальности</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="documents" class="tab-content">
+                    <div class="documents-section">
+                        <h3>Документы, необходимые для поступления</h3>
+                        <p>Для поступления в Дальневосточный судостроительный колледж необходимо предоставить следующий пакет документов:</p>
+                        
+                        <div class="documents-list">
+                            <div class="document-item">
+                                <div class="document-header">
+                                    <div class="document-icon">📝</div>
+                                    <div class="document-title">Заявление о приёме</div>
+                                </div>
+                                <div class="document-description">
+                                    <p>Заполненное по установленной форме заявление о приёме в колледж.</p>
+                                    <a href="https://disk.yandex.ru/i/ruxv8PwvkNd3fQ" class="document-link" target="_blank">
+                                        📥 Скачать форму заявления
+                                    </a>
+                                </div>
+                            </div>
+                            
+                            <div class="document-item">
+                                <div class="document-header">
+                                    <div class="document-icon">🎓</div>
+                                    <div class="document-title">Документ об образовании</div>
+                                </div>
+                                <div class="document-description">
+                                    <p>Оригинал и (или) ксерокопия документа об образовании и (или) документа об образовании и о квалификации:</p>
+                                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li>Аттестат об основном общем образовании (9 классов)</li>
+                                        <li>Аттестат о среднем общем образовании (11 классов)</li>
+                                        <li>Диплом о среднем профессиональном образовании</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="document-item">
+                                <div class="document-header">
+                                    <div class="document-icon">🆔</div>
+                                    <div class="document-title">Документы, удостоверяющие личность и гражданство</div>
+                                </div>
+                                <div class="document-description">
+                                    <p>Оригинал и (или) ксерокопия документов, удостоверяющих личность и гражданство:</p>
+                                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li>Паспорт гражданина Российской Федерации (страницы с фотографией и пропиской)</li>
+                                        <li>Свидетельство о рождении (для лиц младше 14 лет)</li>
+                                        <li>Документ, подтверждающий гражданство (при необходимости)</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="document-item">
+                                <div class="document-header">
+                                    <div class="document-icon">📸</div>
+                                    <div class="document-title">Фотографии</div>
+                                </div>
+                                <div class="document-description">
+                                    <p>4 фотографии размером 3×4 см, сделанные не ранее чем за 6 месяцев до подачи документов.</p>
+                                    <p><strong>Требования к фотографиям:</strong></p>
+                                    <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                        <li>Цветные или черно-белые</li>
+                                        <li>На матовой бумаге</li>
+                                        <li>Без головного убора (кроме религиозных)</li>
+                                        <li>Чёткое изображение лица</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div class="document-item">
+                                <div class="document-header">
+                                    <div class="document-icon">📋</div>
+                                    <div class="document-title">СНИЛС</div>
+                                </div>
+                                <div class="document-description">
+                                    <p>Страховой номер индивидуального лицевого счета (СНИЛС) в системе персонифицированного учета.</p>
+                                    <p><strong>Предоставляется:</strong> оригинал или ксерокопия страхового свидетельства обязательного пенсионного страхования.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="documents-notice">
+                            <h4>📌 Важная информация</h4>
+                            <p><strong>Сроки подачи документов:</strong> с 20 июня по 15 августа текущего года.</p>
+                            <p><strong>Способы подачи документов:</strong></p>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>Лично в приёмной комиссии колледжа</li>
+                                <li>Через операторов почтовой связи</li>
+                                <li>В электронной форме через портал государственных услуг</li>
+                            </ul>
+                            <p><strong>Примечание:</strong> При подаче документов в электронной форме необходимо предоставить оригиналы документов в течение 3 рабочих дней после зачисления.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Новый раздел с методичками -->
+                <div id="methodics" class="tab-content">
+                    <div class="methodics-section">
+                        <h3>Методические материалы для студентов</h3>
+                        <p>В этом разделе представлены учебные материалы и методические пособия по всем специальностям колледжа. Эти ресурсы помогут вам в подготовке к занятиям и освоении профессиональных навыков.</p>
+                        
+                        <div class="methodics-grid">
+                            <!-- Дефектоскопист -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">🔍</div>
+                                    <div>
+                                        <div class="methodic-title">Дефектоскопист</div>
+                                        <div class="methodic-code">22.01.04</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Методические материалы по контролю качества материалов и сварных соединений методами неразрушающего контроля.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://gtt56.ru/wp-content/uploads/2024/10/15.01.36_opop-p_2024.pdf" class="methodic-link" target="_blank">
+                                        📥 Основная программа
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Информационные системы и программирование -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">💻</div>
+                                    <div>
+                                        <div class="methodic-title">Информационные системы и программирование</div>
+                                        <div class="methodic-code">09.02.07</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Учебные материалы по разработке, внедрению и сопровождению информационных систем.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://elib.pnzgu.ru/files/eb/doc/4i5ESzt04ABl.pdf" class="methodic-link" target="_blank">
+                                        📥 Учебное пособие
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Монтаж и техобслуживание судовых машин -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">⚙️</div>
+                                    <div>
+                                        <div class="methodic-title">Монтаж и техобслуживание судовых машин</div>
+                                        <div class="methodic-code">26.02.06</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Методические материалы по монтажу, наладке и техническому обслуживанию судовых механизмов.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://obrnadzor.gov.ru/wp-content/uploads/2024/03/26.02.04-montazh-i-tehnicheskoe-obsluzhivanie-sudovyh-mashin-i-mehanizmov.pdf" class="methodic-link" target="_blank">
+                                        📥 Федеральный стандарт
+                                    </a>
+                                    <a href="https://ktts24.ru/sites/default/files/Uroki/713203486_Vlasov.pdf" class="methodic-link" target="_blank">
+                                        📥 Практическое руководство
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Сварочное производство -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">🔥</div>
+                                    <div>
+                                        <div class="methodic-title">Сварочное производство</div>
+                                        <div class="methodic-code">15.01.26</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Учебные материалы по сварочным технологиям, оборудованию и контролю качества сварочных работ.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://xn----ctb8aecph4fn.xn--p1ai/docs/2025_01_31/6ryrz9Y5Anrd3eQiNhhGyZ7nt.pdf" class="methodic-link" target="_blank">
+                                        📥 Программа подготовки
+                                    </a>
+                                    <a href="https://portal.tpu.ru/SHARED/h/HAYDAROVA/teaching/Tab/INK_Haidarova_Tekhnicheskaia_dokumentatciia.pdf" class="methodic-link" target="_blank">
+                                        📥 Техническая документация
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Сварщик -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">🛠️</div>
+                                    <div>
+                                        <div class="methodic-title">Сварщик</div>
+                                        <div class="methodic-code">15.01.05</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Методические материалы по ручной и механизированной сварке, применяемой в судостроении.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://tpk-tver.ru/attachments/article/254/15.01.05%20%D0%A1%D0%B2%D0%B0%D1%80%D1%89%D0%B8%D0%BA.pdf" class="methodic-link" target="_blank">
+                                        📥 Учебная программа
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Слесарь-монтажник судовой -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">🔧</div>
+                                    <div>
+                                        <div class="methodic-title">Слесарь-монтажник судовой</div>
+                                        <div class="methodic-code">26.01.06</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Материалы по монтажу, демонтажу и ремонту судовых механизмов и оборудования.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://obrnadzor.gov.ru/wp-content/uploads/2023/10/26.01.03-slesar-montazhnik-sudovoj.pdf" class="methodic-link" target="_blank">
+                                        📥 Стандарт профессии
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Судостроение -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">🚢</div>
+                                    <div>
+                                        <div class="methodic-title">Судостроение</div>
+                                        <div class="methodic-code">26.02.02</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Учебные материалы по проектированию, строительству и ремонту судов различного назначения.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://obrnadzor.gov.ru/wp-content/uploads/2024/03/26.02.02-sudostroenie.pdf" class="methodic-link" target="_blank">
+                                        📥 Федеральный стандарт
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Судостроитель-судоремонтник -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">🛳️</div>
+                                    <div>
+                                        <div class="methodic-title">Судостроитель-судоремонтник</div>
+                                        <div class="methodic-code">26.01.05</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Методические материалы по строительству и ремонту металлических судов.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://dvssk-bk.ru/assets/files/UploadFiles/OP/2023/260101-sudostroitel-sudoremontnik-metallicheskih-sudov-professionalitet-2023.pdf" class="methodic-link" target="_blank">
+                                        📥 Образовательная программа
+                                    </a>
+                                    <a href="https://tktts.ru/media/uploads/2020/05/21/260101-.pdf" class="methodic-link" target="_blank">
+                                        📥 Учебное пособие
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Управление качеством продукции -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">📊</div>
+                                    <div>
+                                        <div class="methodic-title">Управление качеством продукции</div>
+                                        <div class="methodic-code">27.02.01</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Материалы по организации и контролю качества продукции в судостроительной отрасли.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="http://techn.sstu.ru/Documentation/SPO/%D0%92%D1%8B%D0%BF%D1%83%D1%81%D0%BA/2024/%D0%A3%D0%9A%D0%9F/%D0%9C%D0%A3%20%D0%BA%20%D0%93%D0%98%D0%90_27.02.07.pdf" class="methodic-link" target="_blank">
+                                        📥 Методические указания
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Электрорадиомонтажник судовой -->
+                            <div class="methodic-card">
+                                <div class="methodic-header">
+                                    <div class="methodic-icon">📡</div>
+                                    <div>
+                                        <div class="methodic-title">Электрорадиомонтажник судовой</div>
+                                        <div class="methodic-code">13.01.10</div>
+                                    </div>
+                                </div>
+                                <div class="methodic-description">
+                                    <p>Учебные материалы по монтажу и обслуживанию судового электрорадиооборудования.</p>
+                                </div>
+                                <div class="methodic-links">
+                                    <a href="https://files.stroyinf.ru/Data/818/81859.pdf" class="methodic-link" target="_blank">
+                                        📥 Профессиональный стандарт
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="methodic-notice">
+                            <h4>📚 Как использовать методические материалы</h4>
+                            <p><strong>Для эффективного использования учебных материалов рекомендуется:</strong></p>
+                            <ul style="margin-top: 0.5rem; padding-left: 1.5rem;">
+                                <li>Изучать материалы последовательно, согласно учебному плану</li>
+                                <li>Делать конспекты ключевых моментов</li>
+                                <li>Выполнять практические задания и упражнения</li>
+                                <li>Обращаться к преподавателям за разъяснениями сложных тем</li>
+                                <li>Использовать материалы для подготовки к экзаменам и зачетам</li>
+                            </ul>
+                            <p style="margin-top: 1rem;"><strong>Примечание:</strong> Все материалы предоставляются для образовательных целей. При возникновении вопросов обращайтесь к кураторам специальностей.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="specialties-table" class="tab-content">
+                    <h3>Специальности колледжа</h3>
+                    <p>Нажмите на название специальности для перехода к подробной информации</p>
+                    
+                    <table class="specialties-table">
+                        <thead>
+                            <tr>
+                                <th>Код</th>
+                                <th>Наименование специальности</th>
+                                <th>Срок обучения</th>
+                                <th>Базовое образование</th>
+                                <th>Форма обучения</th>
+                                <th>Средний балл</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>15.01.05</td>
+                                <td><a class="specialty-link" data-specialty="welder">Сварщик (ручной и частично механизированной сварки)</a></td>
+                                <td>2 года 5 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>3.8</td>
+                            </tr>
+                            <tr>
+                                <td>15.01.26</td>
+                                <td><a class="specialty-link" data-specialty="welding-production">Сварочное производство</a></td>
+                                <td>2 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>4.2</td>
+                            </tr>
+                            <tr>
+                                <td>26.01.05</td>
+                                <td><a class="specialty-link" data-specialty="shipbuilder">Судостроитель-судоремонтник металлических судов</a></td>
+                                <td>2 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>4.0</td>
+                            </tr>
+                            <tr>
+                                <td>13.01.10</td>
+                                <td><a class="specialty-link" data-specialty="electroradiomontage">Электрорадиомонтажник судовой</a></td>
+                                <td>2 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>4.3</td>
+                            </tr>
+                            <tr>
+                                <td>26.01.06</td>
+                                <td><a class="specialty-link" data-specialty="locksmith">Слесарь-монтажник судовой</a></td>
+                                <td>2 года 5 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>3.7</td>
+                            </tr>
+                            <tr>
+                                <td>22.01.04</td>
+                                <td><a class="specialty-link" data-specialty="defectoscopist">Дефектоскопист</a></td>
+                                <td>2 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>4.1</td>
+                            </tr>
+                            <tr>
+                                <td>27.02.01</td>
+                                <td><a class="specialty-link" data-specialty="quality-management">Управление качеством продукции</a></td>
+                                <td>3 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>4.4</td>
+                            </tr>
+                            <tr>
+                                <td>26.02.02</td>
+                                <td><a class="specialty-link" data-specialty="shipbuilding">Судостроение</a></td>
+                                <td>3 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>4.5</td>
+                            </tr>
+                            <tr>
+                                <td>09.02.07</td>
+                                <td><a class="specialty-link" data-specialty="information-systems">Информационные системы и программирование</a></td>
+                                <td>3 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>4.6</td>
+                            </tr>
+                            <tr>
+                                <td>26.02.06</td>
+                                <td><a class="specialty-link" data-specialty="ship-machinery">Монтаж и техобслуживание судовых машин</a></td>
+                                <td>2 года 10 месяцев</td>
+                                <td>9 классов</td>
+                                <td>Очная</td>
+                                <td>3.9</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница новостей -->
+        <section id="news" class="page">
+            <div class="container">
+                <h2>Последние новости</h2>
+                <div class="news-grid">
+                    <div class="news-card" data-news="open-day">
+                        <div class="news-img" style="background-image: url('https://www.ieac.ru/netcat_files/userfiles/den_otkrytyh_dverey1.jpg');"></div>
+                        <div class="news-content">
+                            <div class="news-date">15 октября 2023</div>
+                            <h3>День открытых дверей</h3>
+                            <p>Приглашаем будущих абитуриентов и их родителей на день открытых дверей, который состоится 25 ноября. В программе: экскурсии по мастерским, встречи с преподавателями и студентами.</p>
+                            <button class="btn news-details-btn" data-news="open-day" style="margin-top: 1rem;">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="news-card" data-news="competition">
+                        <div class="news-img" style="background-image: url('https://газета-вся-тверь.рф/upload/iblock/8fb/dpowqru0fd71q9cyrl6u4myba25j623g.jpg');"></div>
+                        <div class="news-content">
+                            <div class="news-date">10 октября 2023</div>
+                            <h3>Победа в конкурсе профмастерства</h3>
+                            <p>Наши студенты заняли первое место в региональном конкурсе профессионального мастерства по IT. Команда показала высокий уровень подготовки в практических заданиях.</p>
+                            <button class="btn news-details-btn" data-news="competition" style="margin-top: 1rem;">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="news-card" data-news="equipment">
+                        <div class="news-img" style="background-image: url('data:image/jpeg;base64,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');"></div>
+                        <div class="news-content">
+                            <div class="news-date">5 октября 2023</div>
+                            <h3>Новое оборудование</h3>
+                            <p>В колледж поступили новые тренажеры для отработки навыков судовождения. Современные симуляторы позволяют реалистично воспроизводить различные условия плавания.</p>
+                            <button class="btn news-details-btn" data-news="equipment" style="margin-top: 1rem;">Читать далее</button>
+                        </div>
+                    </div>
+                    <div class="news-card" data-news="cooperation">
+                        <div class="news-img" style="background-image: url('data:image/jpeg;base64,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');"></div>
+                        <div class="news-content">
+                            <div class="news-date">28 сентября 2023</div>
+                            <h3>Сотрудничество с верфью</h3>
+                            <p>Подписано соглашение о сотрудничестве с крупнейшей судостроительной верфью региона. Студенты получат возможность проходить практику на современном производстве.</p>
+                            <button class="btn news-details-btn" data-news="cooperation" style="margin-top: 1rem;">Читать далее</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Страница контактов -->
+        <section id="contacts" class="page">
+            <div class="container">
+                <h2>Контакты</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <h3>Контактная информация</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📍</div>
+                                <div>
+                                    <p><strong>Адрес:</strong></p>
+                                    <p>Приморский край, г. Большой Камень, ул. Ленина, дом 22</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">⏰</div>
+                                <div>
+                                    <p><strong>Режим работы:</strong></p>
+                                    <p>Пн-Пт: 9:00 - 18:00</p>
+                                    <p>Сб: 9:00 - 15:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h3 style="margin-top: 2rem;">Приемная комиссия</h3>
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <div class="contact-icon">📞</div>
+                                <div>
+                                    <p><strong>Телефон:</strong></p>
+                                    <p>+7 (42335) 4-00-38</p>
+                                </div>
+                            </div>
+                            <div class="contact-item">
+                                <div class="contact-icon">✉️</div>
+                                <div>
+                                    <p><strong>Email:</strong></p>
+                                    <p>dvssk-bk.po@yandex.ru</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://vk.com/dvssk_bk" class="social-link" target="_blank">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_4TEogiUP-hY9xjS0_KENjVNtKJzHCLWFA&s" alt="ВКонтакте" class="social-icon">
+                            </a>
+                            <a href="https://t.me/dvssk_bk" class="social-link" target="_blank">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7GmOc3_hW9ZlMfGCVMaF1G1DM9-YE-PbKLg&s" alt="Telegram" class="social-icon">
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>Мы на карте</h3>
+                        <div class="map-container">
+                            <div style="position:relative;overflow:hidden;width:100%;height:100%;">
+                                <a href="https://yandex.ru/maps/org/dalnevostochny_sudostroitelny_kolledzh/18091060372/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:0px;">Дальневосточный судостроительный колледж</a>
+                                <a href="https://yandex.ru/maps/11407/bolshoy-kamen/category/college/184106236/?utm_medium=mapframe&utm_source=maps" style="color:#eee;font-size:12px;position:absolute;top:14px;">Колледж в Большом Камне</a>
+                                <iframe src="https://yandex.ru/map-widget/v1/?ll=132.339736%2C43.108975&mode=search&oid=18091060372&ol=biz&sll=132.339735%2C43.108975&source=serp_navig&text=%D0%94%D0%92%D0%A1%D0%A1%D0%9A&z=16" width="100%" height="100%" frameborder="1" allowfullscreen="true" style="position:relative;"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно для специальностей -->
+    <div id="specialtyModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-img">
+                    <img id="modalSpecialtyImg" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalSpecialtyName"></h2>
+                    <p class="modal-code" id="modalSpecialtyCode"></p>
+                    <div class="modal-features">
+                        <div class="modal-feature">
+                            <div class="modal-feature-icon">⏱️</div>
+                            <div id="modalSpecialtyDuration"></div>
+                        </div>
+                        <div class="modal-feature">
+                            <div class="modal-feature-icon">🎓</div>
+                            <div id="modalSpecialtyEducation"></div>
+                        </div>
+                        <div class="modal-feature">
+                            <div class="modal-feature-icon">📚</div>
+                            <div id="modalSpecialtyForm"></div>
+                        </div>
+                        <div class="modal-feature">
+                            <div class="modal-feature-icon">⭐</div>
+                            <div id="modalSpecialtyScore"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-details">
+                <div class="modal-section">
+                    <h3>Описание специальности</h3>
+                    <p id="modalSpecialtyDescription"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Чему вы научитесь</h3>
+                    <p id="modalSpecialtySkills"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Перспективы трудоустройства</h3>
+                    <p id="modalSpecialtyProspects"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Ключевые дисциплины</h3>
+                    <p id="modalSpecialtySubjects"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для преподавателей -->
+    <div id="teacherModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-img">
+                    <img id="modalTeacherImg" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalTeacherName"></h2>
+                    <p class="modal-position" id="modalTeacherPosition"></p>
+                    <div class="teacher-detail">
+                        <h4>Образование:</h4>
+                        <p id="modalTeacherEducation"></p>
+                    </div>
+                    <div class="teacher-detail">
+                        <h4>Опыт работы:</h4>
+                        <p id="modalTeacherExperience"></p>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-details">
+                <div class="modal-section">
+                    <h3>Преподаваемые дисциплины</h3>
+                    <p id="modalTeacherSubjects"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Повышение квалификации</h3>
+                    <p id="modalTeacherQualification"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Профессиональная переподготовка</h3>
+                    <p id="modalTeacherRetraining"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для новостей -->
+    <div id="newsModal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-img">
+                    <img id="modalNewsImg" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h2 id="modalNewsTitle"></h2>
+                    <p class="modal-date" id="modalNewsDate"></p>
+                    <div class="news-stats">
+                        <div class="news-stat">
+                            <div class="news-stat-icon">👁️</div>
+                            <div id="modalNewsViews"></div>
+                        </div>
+                        <div class="news-stat">
+                            <div class="news-stat-icon">❤️</div>
+                            <div id="modalNewsLikes"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-details">
+                <div class="modal-section">
+                    <h3>Подробности события</h3>
+                    <p id="modalNewsDescription"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Ключевые моменты</h3>
+                    <p id="modalNewsHighlights"></p>
+                </div>
+                <div class="modal-section">
+                    <h3>Дополнительная информация</h3>
+                    <p id="modalNewsAdditional"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <p>Приморский край, г. Большой Камень, ул. Ленина, дом 22</p>
+                <p>Телефон: +7 (42335) 4-00-38</p>
+                <p>Email: dvssk-bk.po@yandex.ru</p>
+                <div class="footer-social">
+                    <a href="https://vk.com/dvssk_bk" class="footer-social-link" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTk_4TEogiUP-hY9xjS0_KENjVNtKJzHCLWFA&s" alt="ВКонтакте" class="footer-social-icon">
+                    </a>
+                    <a href="https://t.me/dvssk_bk" class="footer-social-link" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7GmOc3_hW9ZlMfGCVMaF1G1DM9-YE-PbKLg&s" alt="Telegram" class="footer-social-icon">
+                    </a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Быстрые ссылки</h3>
+                <ul class="footer-links">
+                    <li><a href="#" class="nav-link" data-page="home">Главная</a></li>
+                    <li><a href="#" class="nav-link" data-page="applicant">Абитуриенту</a></li>
+                    <li><a href="#" class="nav-link" data-page="specialties">Специальности</a></li>
+                    <li><a href="#" class="nav-link" data-page="teachers">Преподаватели</a></li>
+                    <li><a href="#" class="nav-link" data-page="news">Новости</a></li>
+                    <li><a href="#" class="nav-link" data-page="contacts">Контакты</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Приемная комиссия</h3>
+                <p>Работаем: Пн-Пт с 9:00 до 18:00</p>
+                <p>Телефон: +7 (42335) 4-00-38</p>
+                <p>Email: dvssk-bk.po@yandex.ru</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 Дальневосточный судостроительный колледж (ДВССК). Все права защищены.</p>
+            <p>Разработано в рамках конкурса "БунтСтуд"</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Навигация между страницами
+            const navLinks = document.querySelectorAll('.nav-link');
+            const pages = document.querySelectorAll('.page');
+            const logo = document.querySelector('.logo');
+            
+            function showPage(pageId) {
+                // Скрыть все страницы
+                pages.forEach(page => {
+                    page.classList.remove('active');
+                });
+                
+                // Показать выбранную страницу
+                const activePage = document.getElementById(pageId);
+                if (activePage) {
+                    activePage.classList.add('active');
+                }
+                
+                // Обновить активную ссылку в навигации
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('data-page') === pageId) {
+                        link.classList.add('active');
+                    }
+                });
+                
+                // Прокрутить к верху страницы
+                window.scrollTo(0, 0);
+            }
+            
+            // Обработчики кликов по навигационным ссылкам
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const pageId = this.getAttribute('data-page');
+                    showPage(pageId);
+                    
+                    // Закрыть мобильное меню после клика
+                    if (window.innerWidth <= 768) {
+                        const nav = document.querySelector('nav ul');
+                        nav.classList.add('hidden');
+                    }
+                });
+            });
+            
+            // Логотип кликабельный для возврата на главную
+            logo.addEventListener('click', function(e) {
+                e.preventDefault();
+                showPage('home');
+            });
+            
+            // Мобильное меню
+            const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+            const nav = document.querySelector('nav ul');
+            
+            mobileMenuBtn.addEventListener('click', () => {
+                nav.classList.toggle('hidden');
+            });
+            
+            // Табы на странице абитуриенту
+            const tabs = document.querySelectorAll('.tab');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    const tabId = tab.getAttribute('data-tab');
+                    
+                    // Убрать активный класс у всех табов
+                    tabs.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(content => content.classList.remove('active'));
+                    
+                    // Добавить активный класс к выбранному табу
+                    tab.classList.add('active');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+            
+            // Данные о специальностях
+            const specialtiesData = {
+                'welding-production': {
+                    name: 'Сварочное производство',
+                    code: '15.01.26',
+                    duration: '2 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '4.2',
+                    image: 'https://www.profguide.io/images/article/a/54/3iAUVHjHBj.webp',
+                    description: 'Профессиональная подготовка специалистов по сварочным технологиям, оборудованию и контролю качества сварочных работ в судостроении. Студенты изучают современные методы сварки, оборудование и технологии, применяемые в судостроительной отрасли.',
+                    skills: 'Освоение различных видов сварки (ручная, полуавтоматическая, аргонодуговая), чтение чертежей, контроль качества сварных швов, работа со сварочным оборудованием, техника безопасности при проведении сварочных работ.',
+                    prospects: 'Выпускники работают на судостроительных верфях, в ремонтных доктах, машиностроительных предприятиях. Возможности карьерного роста до мастера участка, технолога, начальника сварочного цеха.',
+                    subjects: 'Технология сварочного производства, Оборудование сварочного цеха, Контроль качества сварных соединений, Материаловедение, Черчение и чтение схем'
+                },
+                'shipbuilder': {
+                    name: 'Судостроитель-судоремонтник металлических судов',
+                    code: '26.01.05',
+                    duration: '2 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '4.0',
+                    image: 'https://bkamen.info/assets/images/resources/9660/e7ca5532ede35cad1285b2d1e9bc4fb71c43a3cf.jpg',
+                    description: 'Подготовка специалистов по строительству и ремонту металлических судов. Обучение включает работу с судовыми конструкциями, монтаж оборудования и освоение современных судостроительных технологий.',
+                    skills: 'Сборка корпусных конструкций, монтаж судового оборудования, ремонт судовых систем, работа с чертежами и технической документацией, использование специализированного инструмента.',
+                    prospects: 'Трудоустройство на судостроительные заводы, судоремонтные предприятия, верфи. Перспективы роста до бригадира, мастера, технолога судостроительного производства.',
+                    subjects: 'Технология судостроения, Судовые конструкции, Судоремонтное производство, Сварочное дело, Черчение и проектирование'
+                },
+                'welder': {
+                    name: 'Сварщик (ручной и частично механизированной сварки)',
+                    code: '15.01.05',
+                    duration: '2 года 5 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '3.8',
+                    image: 'https://i.vuzopedia.ru/storage/app/uploads/public/626/6f9/37e/6266f937e710b158494225.jpg',
+                    description: 'Обучение ручной и механизированной сварке, наплавке различных материалов, применяемых в судостроении. Специализация на работе с металлическими конструкциями судов.',
+                    skills: 'Ручная дуговая сварка, полуавтоматическая сварка, газопламенная обработка, наплавка изношенных деталей, контроль качества сварных соединений, чтение технологических карт.',
+                    prospects: 'Востребованность на всех судостроительных предприятиях, в ремонтных мастерских, на производственных заводах. Возможность работы вахтовым методом с высокой оплатой труда.',
+                    subjects: 'Основы сварочного производства, Оборудование для сварки, Технология ручной сварки, Контроль качества, Материаловедение'
+                },
+                'electroradiomontage': {
+                    name: 'Электрорадиомонтажник судовой',
+                    code: '13.01.10',
+                    duration: '2 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '4.3',
+                    image: 'https://i.vuzopedia.ru/storage/app/uploads/public/62e/23c/239/62e23c239c19d877718381.jpg',
+                    description: 'Подготовка специалистов по монтажу, наладке и обслуживанию судового электрорадиооборудования, систем связи и навигации. Современные технологии морской электроники.',
+                    skills: 'Монтаж судового электрооборудования, прокладка кабельных трасс, настройка радионавигационного оборудования, диагностика и ремонт электронных систем, работа со схемами и чертежами.',
+                    prospects: 'Работа на судостроительных заводах, в сервисных центрах морской электроники, на флоте. Высокая востребованность в условиях развития цифровых технологий на флоте.',
+                    subjects: 'Судовая электротехника, Радионавигационные системы, Судовая автоматика, Монтаж электрооборудования, Основы электроники'
+                },
+                'locksmith': {
+                    name: 'Слесарь-монтажник судовой',
+                    code: '26.01.06',
+                    duration: '2 года 5 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '3.7',
+                    image: 'https://80.img.avito.st/image/1/1._u7yILawUgfEl9AKgmez-qiBUAdCiVoNRA.qYTekMHbfnGuLkS-aRxESvEUcNSfMOORpt8qK1Nutf0',
+                    description: 'Профессиональная подготовка по монтажу, демонтажу и ремонту судовых механизмов, систем и оборудования. Сборка судовых конструкций различной сложности.',
+                    skills: 'Сборка механических узлов, монтаж трубопроводов, установка судового оборудования, регулировка механизмов, чтение монтажных схем, использование измерительного инструмента.',
+                    prospects: 'Трудоустройство на судостроительных верфях, в монтажных цехах, ремонтных предприятиях. Возможности карьерного роста до бригадира монтажников, мастера участка.',
+                    subjects: 'Слесарное дело, Монтаж судовых систем, Технология сборки, Чтение чертежей, Основы механики'
+                },
+                'defectoscopist': {
+                    name: 'Дефектоскопист',
+                    code: '22.01.04',
+                    duration: '2 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '4.1',
+                    image: 'https://sskzvezda.ru/images/foto_news/defektoskopist/830A7708_1.jpg',
+                    description: 'Подготовка специалистов по контролю качества материалов и сварных соединений методами неразрушающего контроля в судостроении. Обеспечение безопасности судовых конструкций.',
+                    skills: 'Визуальный и измерительный контроль, ультразвуковая дефектоскопия, капиллярный контроль, магнитопорошковый метод, радиографический контроль, документация результатов.',
+                    prospects: 'Работа в службах технического контроля судостроительных предприятий, сертификационных центрах, экспертных организациях. Высокая ответственность и востребованность.',
+                    subjects: 'Методы неразрушающего контроля, Дефектоскопия сварных соединений, Контроль качества, Нормативная документация, Основы материаловедения'
+                },
+                'quality-management': {
+                    name: 'Управление качеством продукции',
+                    code: '27.02.01',
+                    duration: '3 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '4.4',
+                    image: 'https://i.vuzopedia.ru/storage/app/resources/resize/605_0_0_0_auto/img_6c9d8ee880ae848a633076c3df5ba439.jpeg',
+                    description: 'Подготовка специалистов по организации и контролю качества продукции, процессов и услуг в судостроительной отрасли. Современные системы менеджмента качества.',
+                    skills: 'Разработка систем качества, статистические методы контроля, аудит процессов, работа с нормативной документацией, анализ несоответствий, внедрение стандартов качества.',
+                    prospects: 'Работа в отделах качества судостроительных предприятий, сертификационных органах, на руководящих должностях в производственных подразделениях.',
+                    subjects: 'Системы менеджмента качества, Статистические методы, Метрология, Стандартизация, Управление процессами'
+                },
+                'shipbuilding': {
+                    name: 'Судостроение',
+                    code: '26.02.02',
+                    duration: '3 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '4.5',
+                    image: 'https://primamedia_2537050521.s3.cloud.mts.ru/files/big/1848/1847942.jpg',
+                    description: 'Комплексная подготовка специалистов по проектированию, строительство и ремонту судов различного назначения. Изучение современных технологий судостроения.',
+                    skills: 'Проектирование судовых конструкций, технология судостроения, расчеты прочности, работа с CAD-системами, организация судостроительного производства, управление проектами.',
+                    prospects: 'Трудоустройство в конструкторские бюро, на судостроительные заводы, в проектные организации. Возможности карьерного роста до ведущего конструктора, начальника отдела.',
+                    subjects: 'Теория корабля, Сопротивление материалов, Технология судостроения, Судовые системы, Компьютерное проектирование'
+                },
+                'information-systems': {
+                    name: 'Информационные системы и программирование',
+                    code: '09.02.07',
+                    duration: '3 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '4.6',
+                    image: 'https://dagpravda.ru/wp-content/uploads/2023/12/strojka.jpg',
+                    description: 'Подготовка IT-специалистов для судостроительной отрасли. Разработка, внедрение и сопровождение информационных систем, автоматизация производственных процессов.',
+                    skills: 'Программирование на современных языках, разработка баз данных, веб-технологии, системное администрирование, автоматизация бизнес-процессов, кибербезопасность.',
+                    prospects: 'Работа в IT-отделах судостроительных предприятий, software-компаниях, стартапах. Высокая востребованность в условиях цифровизации судостроения.',
+                    subjects: 'Программирование, Базы данных, Веб-технологии, Сетевые технологии, Информационная безопасность'
+                },
+                'ship-machinery': {
+                    name: 'Монтаж и техобслуживание судовых машин',
+                    code: '26.02.06',
+                    duration: '2 года 10 месяцев',
+                    education: '9 классов',
+                    form: 'Очная форма',
+                    score: '3.9',
+                    image: 'https://ic.pics.livejournal.com/nordlight_spb/31085042/40522/original.jpg',
+                    description: 'Подготовка специалистов по монтажу, наладке, техническому обслуживанию и ремонт судовых машин, механизмов и систем. Обеспечение надежной работы судового оборудования.',
+                    skills: 'Монтаж судовых двигателей, наладка механических систем, техническое обслуживание, диагностика неисправностей, ремонт судовых механизмов, чтение технической документации.',
+                    prospects: 'Трудоустройство на судостроительных заводах, в сервисных центрах, на флоте. Востребованность в условиях развития судоходства и морской техники.',
+                    subjects: 'Судовые энергетические установки, Монтаж механического оборудования, Техническое обслуживание, Гидравлика и пневматика, Основы судовождения'
+                }
+            };
+
+            // Модальное окно для специальностей
+            const specialtyModal = document.getElementById('specialtyModal');
+            const specialtyDetailsBtns = document.querySelectorAll('.specialty-details-btn');
+            const specialtyLinks = document.querySelectorAll('.specialty-link');
+            
+            function openSpecialtyModal(specialtyId) {
+                const specialtyData = specialtiesData[specialtyId];
+                
+                if (specialtyData) {
+                    document.getElementById('modalSpecialtyImg').src = specialtyData.image;
+                    document.getElementById('modalSpecialtyImg').alt = specialtyData.name;
+                    document.getElementById('modalSpecialtyName').textContent = specialtyData.name;
+                    document.getElementById('modalSpecialtyCode').textContent = `Код: ${specialtyData.code}`;
+                    document.getElementById('modalSpecialtyDuration').textContent = specialtyData.duration;
+                    document.getElementById('modalSpecialtyEducation').textContent = specialtyData.education;
+                    document.getElementById('modalSpecialtyForm').textContent = specialtyData.form;
+                    document.getElementById('modalSpecialtyScore').innerHTML = `Средний балл: <span class="modal-score">${specialtyData.score}</span>`;
+                    document.getElementById('modalSpecialtyDescription').textContent = specialtyData.description;
+                    document.getElementById('modalSpecialtySkills').textContent = specialtyData.skills;
+                    document.getElementById('modalSpecialtyProspects').textContent = specialtyData.prospects;
+                    document.getElementById('modalSpecialtySubjects').textContent = specialtyData.subjects;
+                    
+                    specialtyModal.style.display = 'block';
+                }
+            }
+            
+            specialtyDetailsBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const specialtyId = this.getAttribute('data-specialty');
+                    openSpecialtyModal(specialtyId);
+                });
+            });
+            
+            specialtyLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const specialtyId = this.getAttribute('data-specialty');
+                    
+                    showPage('specialties');
+                    
+                    setTimeout(() => {
+                        const specialtyCard = document.querySelector(`.specialty-card[data-specialty="${specialtyId}"]`);
+                        if (specialtyCard) {
+                            specialtyCard.scrollIntoView({ behavior: 'smooth' });
+                            specialtyCard.style.boxShadow = '0 0 0 3px var(--accent-blue)';
+                            setTimeout(() => {
+                                specialtyCard.style.boxShadow = '';
+                            }, 3000);
+                        }
+                    }, 500);
+                });
+            });
+            
+            // Данные о преподавателях
+            const teachersData = {
+                grigorev: {
+                    name: "Григорьев Александр Николаевич",
+                    position: "Руководитель физического воспитания",
+                    subjects: "Физическая культура",
+                    education: "Высшее, Горное дело, Инженер",
+                    experience: "40/17 лет",
+                    qualification: "Декабрь 2022 г. «Программа обучения педагогических работников (преподавателей и мастеров производственного обучения) по освоению компетенций, обеспечивающих реализацию мероприятий ФП «Профессионалитет», в том числе в части получения производственных навыков», 03.2022 г. Методика преподавания ФК в СПО в соответствии с ФГОС СПО",
+                    retraining: "",
+                    image: "https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/grigorev-alexandr-nikolaevich.png"
+                },
+                haritonova: {
+                    name: "Харитонова Анна Николаевна",
+                    position: "Преподаватель",
+                    subjects: "Русский язык, Родной язык, Родная литература",
+                    education: "Высшее, Русский язык и литература, Учитель русского языка и литературы",
+                    experience: "21 год",
+                    qualification: "Декабрь 2022 г. «Программа обучения педагогических работников (преподавателей и мастеров производственного обучения) по освоению компетенций, обеспечивающих реализацию мероприятий ФП «Профессионалитет», в том числе в части получения производственных навыков», 2021 г. ООО «Инфоурок» «Специфика преподавания предмета «Родной (русский) язык», 24.05.2022 Организация воспитательной работы в ОО системы СПО",
+                    retraining: "",
+                    image: "https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/haritonova-anna-nikolaevna.png"
+                },
+                ishchenko: {
+                    name: "Ищенко Марина Леонидовна",
+                    position: "Методист",
+                    subjects: "Основы проектной деятельности",
+                    education: "Высшее, Экономика и управление на предприятии (по отраслям), Экономист-менеджер",
+                    experience: "1 год",
+                    qualification: "Декабрь 2022 г. «Программа обучения педагогических работников (преподавателей и мастеров производственного обучения) по освоению компетенций, обеспечивающих реализацию мероприятий ФП «Профессионалитет», в том числе в части получения производственных навыков»",
+                    retraining: "30.09.2021 «Организационно-методическое обеспечение СПО. Реализация ФГОС нового поколения», ПП 13.09.2021 ООО «Центр инновационного образования и воспитания» «Организация классного руководителя в ОО»",
+                    image: "https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/ishchenko-marina-leonidovna.png"
+                },
+                korobko: {
+                    name: "Коробко Ангелина Олеговна",
+                    position: "Педагог дополнительного образования",
+                    subjects: "Основы проектной деятельности",
+                    education: "Среднее профессиональное, Повар, кондитер",
+                    experience: "3 года",
+                    qualification: "Декабрь 2022 г. «Воспитание в диалоге настоящего и будущего», декабрь 2022 г. «Программа обучения педагогических работников (преподавателей и мастеров производственного обучения) по освоению компетенций, обеспечивающих реализацию мероприятий ФП «Профессионалитет», в том числе в части получения производственных навыков»",
+                    retraining: "",
+                    image: "https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/korobko-angelina-olegovna.png"
+                },
+                sahnevich: {
+                    name: "Сахневич Ольга Геннадьевна",
+                    position: "Преподаватель",
+                    subjects: "Дисциплины профессионального цикла по специальности «Управление качеством продукции»",
+                    education: "Высшее, Экономика и организация промышленности продовольственных товаров, Инженер-экономист",
+                    experience: "15 лет",
+                    qualification: "Декабрь 2022 г. «Программа обучения педагогических работников (преподавателей и мастеров производственного обучения) по освоению компетенций, обеспечивающих реализацию мероприятий ФП «Профессионалитет», в том числе в части получения производственных навыков»",
+                    retraining: "2020 г. Преподавательская деятельность в СПО, ПК",
+                    image: "https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/sahnevich-olga-gennadevna.png"
+                },
+                savlova: {
+                    name: "Савлева Татьяна Львовна",
+                    position: "Преподаватель",
+                    subjects: "История",
+                    education: "Высшее, История, Историк. Преподаватель истории и обществознания",
+                    experience: "43 года",
+                    qualification: "Декабрь 2022 г. «Программа обучения педагогических работников (преподавателей и мастеров производственного обучения) по освоению компетенций, обеспечивающих реализацию мероприятий ФП «Профессионалитет», в том числе в части получения производственных навыков»",
+                    retraining: "",
+                    image: "https://raw.githubusercontent.com/Marat1488-bot/dvssk-images/main/savlova-tatyana-lvovna.png"
+                }
+            };
+            
+            // Модальное окно для преподавателей
+            const teacherModal = document.getElementById('teacherModal');
+            const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
+            
+            viewDetailsBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const teacherCard = this.closest('.teacher-card');
+                    const teacherId = teacherCard.getAttribute('data-teacher');
+                    const teacherData = teachersData[teacherId];
+                    
+                    if (teacherData) {
+                        document.getElementById('modalTeacherImg').src = teacherData.image;
+                        document.getElementById('modalTeacherImg').alt = teacherData.name;
+                        document.getElementById('modalTeacherName').textContent = teacherData.name;
+                        document.getElementById('modalTeacherPosition').textContent = teacherData.position;
+                        document.getElementById('modalTeacherEducation').textContent = teacherData.education;
+                        document.getElementById('modalTeacherExperience').textContent = teacherData.experience;
+                        document.getElementById('modalTeacherSubjects').textContent = teacherData.subjects;
+                        document.getElementById('modalTeacherQualification').textContent = teacherData.qualification || "Информация отсутствует";
+                        document.getElementById('modalTeacherRetraining').textContent = teacherData.retraining || "Информация отсутствует";
+                        
+                        teacherModal.style.display = 'block';
+                    }
+                });
+            });
+
+            // Данные о новостях
+            const newsData = {
+                'open-day': {
+                    title: 'День открытых дверей в ДВССК',
+                    date: '15 октября 2023',
+                    image: 'https://www.ieac.ru/netcat_files/userfiles/den_otkrytyh_dverey1.jpg',
+                    views: '1,247',
+                    likes: '89',
+                    description: '25 ноября 2023 года в Дальневосточном судостроительном колледже состоится традиционный День открытых дверей. Это уникальная возможность для будущих абитуриентов и их родителей познакомиться с колледжем, его материально-технической базой и преподавательским составом.',
+                    highlights: 'В программе мероприятия: экскурсии по учебным мастерским и лабораториям, демонстрация современного оборудования, встречи с преподавателями и студентами, консультации по вопросам поступления и обучения. Особое внимание будет уделено новым специальностям и программам подготовки.',
+                    additional: 'Мероприятие пройдет с 10:00 до 16:00 в главном корпусе колледжа по адресу: г. Большой Камень, ул. Ленина, 22. Для участия необходимо предварительно зарегистрироваться по телефону приемной комиссии: +7 (42335) 4-00-38.'
+                },
+                'competition': {
+                    title: 'Победа в региональном конкурсе профмастерства',
+                    date: '10 октября 2023',
+                    image: 'https://dvssk-bk.ru/assets/images/gal/654/image1.jpeg',
+                    views: '892',
+                    likes: '67',
+                    description: 'Студенты Дальневосточного судостроительного колледжа заняли первое место в региональном конкурсе профессионального мастерства "IT-Профи" в номинации "Информационные системы и программирование".',
+                    highlights: 'Команда колледжа в составе пяти студентов продемонстрировала высочайший уровень подготовки в практических заданиях: разработка веб-приложений, создание баз данных, программирование на современных языках и решение алгоритмических задач. Особенно жюри отметило качество кода, инновационные подходы к решению задач и умение работать в команде.',
+                    additional: 'Победители получили ценные призы и сертификаты на прохождение стажировки в ведущих IT-компаниях региона. Подготовку студентов осуществляли опытные преподаватели кафедры информационных технологий колледжа.'
+                },
+                'equipment': {
+                    title: 'Поступление нового учебного оборудования',
+                    date: '5 октября 2023',
+                    image: 'https://dvssk-bk.ru/assets/images/gal/672/20230418_145826.jpg',
+                    views: '1,045',
+                    likes: '78',
+                    description: 'В учебные мастерские колледжа поступили современные тренажеры и симуляторы для отработки практических навыков судовождения и судоремонта.',
+                    highlights: 'Новое оборудование включает: навигационные тренажеры с реалистичной графикой, симуляторы судовых энергетических установок, современные сварочные аппараты с цифровым управлением, оборудование для неразрушающего контроля качества сварных соединений.',
+                    additional: 'Оснащение мастерских соответствует требованиям международных стандартов подготовки морских специалистов. Это позволит студентам получать практические навыки на оборудовании, используемом на современных судостроительных предприятиях.'
+                },
+                'cooperation': {
+                    title: 'Сотрудничество с судостроительной верфью',
+                    date: '28 сентября 2023',
+                    image: 'https://www.sskzvezda.ru/images/foto_news/FCK/2K5A8028_1.jpg',
+                    views: '756',
+                    likes: '54',
+                    description: 'Подписано соглашение о стратегическом сотрудничестве между ДВССК и крупнейшей судостроительной верфью региона.',
+                    highlights: 'В рамках соглашения предусмотрены: организация производственных практик для студентов на современном производстве, трудоустройство выпускников, совместная разработка образовательных программ, повышение квалификации преподавателей на предприятии.',
+                    additional: 'Партнерство с ведущим предприятием судостроительной отрасли позволит обеспечить высокое качество подготовки специалистов и их востребованность на рынке труда. Студенты получат уникальную возможность работать с передовыми технологиями судостроения.'
+                }
+            };
+
+            // Модальное окно для новостей
+            const newsModal = document.getElementById('newsModal');
+            const newsDetailsBtns = document.querySelectorAll('.news-details-btn');
+            
+            function openNewsModal(newsId) {
+                const newsDataItem = newsData[newsId];
+                
+                if (newsDataItem) {
+                    document.getElementById('modalNewsImg').src = newsDataItem.image;
+                    document.getElementById('modalNewsImg').alt = newsDataItem.title;
+                    document.getElementById('modalNewsTitle').textContent = newsDataItem.title;
+                    document.getElementById('modalNewsDate').textContent = newsDataItem.date;
+                    document.getElementById('modalNewsViews').textContent = `${newsDataItem.views} просмотров`;
+                    document.getElementById('modalNewsLikes').textContent = `${newsDataItem.likes} лайков`;
+                    document.getElementById('modalNewsDescription').textContent = newsDataItem.description;
+                    document.getElementById('modalNewsHighlights').textContent = newsDataItem.highlights;
+                    document.getElementById('modalNewsAdditional').textContent = newsDataItem.additional;
+                    
+                    newsModal.style.display = 'block';
+                }
+            }
+            
+            newsDetailsBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const newsId = this.getAttribute('data-news');
+                    openNewsModal(newsId);
+                });
+            });
+            
+            // Закрытие модальных окон
+            const closeButtons = document.querySelectorAll('.close-modal');
+            
+            closeButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    specialtyModal.style.display = 'none';
+                    teacherModal.style.display = 'none';
+                    newsModal.style.display = 'none';
+                });
+            });
+            
+            window.addEventListener('click', function(event) {
+                if (event.target === specialtyModal) {
+                    specialtyModal.style.display = 'none';
+                }
+                if (event.target === teacherModal) {
+                    teacherModal.style.display = 'none';
+                }
+                if (event.target === newsModal) {
+                    newsModal.style.display = 'none';
+                }
+            });
+            
+            // Показать главную страницу по умолчанию
+            showPage('home');
+        });
+    </script>
+    <!-- Бейдж "Профессионалитет" -->
+<div class="professionalitet-badge" title="Колледж — участник федерального проекта 'Профессионалитет'">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRPiMQFVcTfSXWGdZYU_siie9q6GkenIbtVw&s" alt="Федеральный проект Профессионалитет">
+</div>
+</body>
+</html>
